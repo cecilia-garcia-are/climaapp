@@ -23,16 +23,12 @@
      
 }
 
-
-
-body {
+.card-container {
     display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
     justify-content: center;
-    min-width: 320px;
-    min-height: 100vh;
-    font-family: var(--body-font);
-    background: var(--body-background);
-
+    
 }
 
 h1 {
@@ -58,6 +54,7 @@ p {
     position: relative;
     align-content: center;
     padding-left: 10px;
+    max-width: 60%;
     width: 300px;
     height: 30px;
     background-color: var(--conteint-color);
@@ -75,6 +72,7 @@ p {
     background-color: var(--conteint-color);
     color: var(--text-color);
     align-items: center;
+    max-width: 60%;
     height: 30px;
     cursor: pointer;
     border: none;
@@ -85,9 +83,7 @@ p {
     margin-left: 7px;
 }
 
-.btn:hover {
-    background-color: var(--hover-color-button);
-}
+
 
 .btn-btn-primary {
     align-items: center;    
@@ -150,17 +146,20 @@ p {
 }
 
 .weather {
-    position: relative;
+    
+    /*position: relative;*/
     background: var(--box-color);
     color: var(--box-text-light);
     box-shadow: 2px 2px 3px 2px rgba(54, 54, 54, 0.425);
     border-radius: 20px 200px 20px 20px;
-    max-width: 100%;
+    max-width:90%;
+    width: 300px;
     text-align: left;
     padding-left: 30px;
     padding-block-end: 5px;
-    margin: 5px;
-    margin-top: 3rem;
+    margin: 0 auto;
+    /* margin: 5px;
+    margin-top: 3rem; */
     
 }
 
@@ -185,7 +184,7 @@ p {
 }
 
 .weather__btn:hover {
-    background-color: var(--hover-color-button);
+    transform:scale(1.2);
 }
 
 .temperature {
@@ -209,45 +208,88 @@ img {
     max-width: 200px;
 }
 
-.bxs-toggle-left {
-    justify-content: right;
+.dark-btn {
+     text-align: right;
+     padding-right: 3em;
+     color: white;
 }
 
 
 
-/* Dark 
+/* Dark */
 
 .dark-mode  {
-  background: var(--body-background-dark);
-  color: var(--text-color);
-  max-width: 100%;
+    overflow-y: auto;
+    font-family: var(--body-font);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+   background: var(--body-background);
+   padding-top: 2px;
+  /*max-width: 100%;*/
 }
 
-.dark-mode .form-control {
+
+.dark-mode.dark-mode2 {
+
+ background: var(--body-background-dark);
+}
+
+.form-control {
+    background: var(--conteint-color);
+    color: var(--text-color);
+}
+
+.form-control.dark-mode2 {
     background: var(--conteint-color-dark);
     color: var(--text-color);
 }
 
-.dark-mode .btn {
+.btn {
+    background: var(--conteint-color);
+    color: var(--text-color);
+}
+
+.btn.dark-mode2 {
     background: var(--conteint-color-dark);
     color: var(--text-color);
 }
-.dark-mode .btn:hover {
+
+
+
+.weather{
+  background: var(--box-color);
+  color: var(--box-text-light);
+}
+
+.weather.dark-mode2{
+    background: var(--box-color-dark);
+    color: var(--text-color);
+  }
+
+.weather__btn{
+  background: var(--conteint-color);
+}
+
+.weather__btn.dark-mode2{
+    background: var(--conteint-color-dark);
+  }
+
+.weather__btn:hover {
+    transform:scale(1.2);
+    background-color: var(--hover-color-button);
+}
+
+.weather__btn.dark-mode2:hover {
+    transform:scale(1.2);
     background-color: var(--hover-color-button-dark);
 }
 
-.dark-mode .weather{
-  background: var(--box-color-dark);
-  color: var(--text-color);
+@media screen and (max-whidth: 370px ) {
+    .form-control{
+        width: 100px;
+    }
 }
-
-.dark-mode .weather__btn{
-  background: var(--conteint-color-dark);
-}
-
-.dark-mode .weather__btn:hover {
-    background-color: var(--hover-color-button-dark);
-}
-
-*/
-

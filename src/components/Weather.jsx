@@ -2,7 +2,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import Loader from "./Loader"
 
-const Weather = () => {
+const Weather = ({isThemeDark}) => {
 
 
     const [ city, setCity ] = useState("")
@@ -87,18 +87,18 @@ const Weather = () => {
 
     return(
         <>
-        
+        <h2 className="tittle" >Weather App</h2>
         
         <article className="search">
             <form onSubmit={onSubmit}>
                 <div className="input-group">
-                    <input type="text" className="form-control" placeholder="City" onChange={(e) => setCity(e.target.value)} />
-                    <button className="btn btn primary input-group text" type="submit">Search</button>
+                    <input type="text" className={`form-control ${isThemeDark ? 'dark-mode2' : ''}`} placeholder="City" onChange={(e) => setCity(e.target.value)} />
+                    <button className={`btn btn primary input-group text ${isThemeDark ? 'dark-mode2' : ''}`} type="submit">Search</button>
                 </div>
             </form>
        
             
-                <div className='weather'>
+                <div className={`weather ${isThemeDark ? 'dark-mode2' : ''}`}>
                     
                     <img className="icons" src={icons[weather.weather?.[0].icon]} alt="" />
                     
@@ -118,7 +118,7 @@ const Weather = () => {
 
                 </div>
 
-                <button onClick={handleClick} className='weather__btn'>{isCelsius ? 'Changing to °F': 'Changing to °C'}</button>
+                <button onClick={handleClick} className={`weather__btn ${isThemeDark ? 'dark-mode2' : ''}`}>{isCelsius ? 'Changing to °F': 'Changing to °C'}</button>
                 </article>
             </>
         
